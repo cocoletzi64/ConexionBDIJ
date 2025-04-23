@@ -1,7 +1,5 @@
 package org.example.jdbc.util;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ConexionBD {
     private static String url="jdbc:mysql://localhost:3306/veterinaria?serverTimezone=UTC";

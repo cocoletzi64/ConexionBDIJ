@@ -1,13 +1,10 @@
 package org.example;
-
-
 import jakarta.persistence.*;
-
 import java.util.Date;
 @Entity
 public class Alumno {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     @Basic
     private String nombre;
@@ -56,5 +53,14 @@ public class Alumno {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    @Override
+    public String toString() {
+        return
+                "ID=" + ID +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", fecha=" + fecha ;
     }
 }
