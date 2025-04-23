@@ -22,4 +22,21 @@ public class ControladoraLogica {
     public void editaralumno(Alumno alu){
         controlPersis.editarAlumno(alu);
     }
+    //Carrera
+    public void crearCarrera(Carrera car){
+        controlPersis.crearCarrera(car);
+    }
+    public void eliminaCarrera(int id){
+        controlPersis.elimnarcCarrera(id);
+
+    }
+    public Carrera traerCarrera(int id){
+        return controlPersis.traerCarrera(id);
+    }
+    public ArrayList<Carrera> traerlistadeCarreras(){
+        return controlPersis.traerlistadeCarreras();
+    }
+    public void editarCarrera(Carrera car){
+        controlPersis.editarCarrera(car);
+    }
 }

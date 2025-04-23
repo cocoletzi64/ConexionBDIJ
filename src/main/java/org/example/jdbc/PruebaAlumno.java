@@ -2,8 +2,8 @@ package org.example.jdbc;
 import jakarta.persistence.*;
 import org.example.Alumno;
 import org.example.jpa.pruebapersistencia.ControladoraPersistencia;
+import org.example.logica.Carrera;
 import org.example.logica.ControladoraLogica;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -12,34 +12,23 @@ public class PruebaAlumno {
 
         ControladoraLogica control=new ControladoraLogica();
 
-        Alumno alu=new Alumno(1,"Erick","Santillan", new Date());
-        control.crearalumno(alu);
+        Carrera carr1=new Carrera(25,"Programacion");
+        control.crearCarrera(carr1);
+        Carrera carr2=new Carrera(26,"Medicina");
+        control.crearCarrera(carr2);
 
-        Alumno alu2=new Alumno(2,"Mario","Cocoletzi",new Date());
-        control.crearalumno(alu2);
+        Alumno alu7=new Alumno(7,"Erick","Santillan", new Date(),carr1);
+        control.crearalumno(alu7);
 
-        Alumno al3=new Alumno(3,"Giovas", "Santillan",new Date());
-        control.crearalumno(al3);
+        System.out.println("-----------------------------------");
+        System.out.println("--------------Datos alumno-----------");
+        Alumno au=control.traerAlumno(7);
+        System.out.println("Alumno: "+alu7.getNombre()+" "+alu7.getApellido());
+        System.out.println("Cursa la carrera de:"+alu7.getCarre().getNombre());
 
-        Alumno al4=new Alumno(4,"Luis", "Valladares",new Date());
-        control.crearalumno(al4);
 
-        Alumno al5=new Alumno(5,"Dolores", "Campos",new Date());
-        control.crearalumno(al5);
 
-        Alumno al6=new Alumno(6,"Vero", "Campos",new Date());
-        control.crearalumno(al6);
-        control.eliminaralumno(5);
-        Alumno au= control.traerAlumno(2);
-        au.setApellido("Valladares");
-        control.editaralumno(au);
-        System.out.println("----------------Busqueda Individual--------------------");
-        System.out.println("El alumno es "+au);
-        System.out.println("----------------Busqueda Alumnos--------------------");
-        ArrayList<Alumno> listaAlumnos=control.traerlistadeAlumnos();
-        for(Alumno al:listaAlumnos){
-            System.out.println("El alumno es: "+al.toString());
-        }
+
 
 
 

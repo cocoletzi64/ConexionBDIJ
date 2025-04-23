@@ -1,5 +1,4 @@
 package org.example.logica;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +12,8 @@ public class Carrera {
     public Carrera() {
     }
 
-    public Carrera(String nombre) {
+    public Carrera(int id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
     }
 
