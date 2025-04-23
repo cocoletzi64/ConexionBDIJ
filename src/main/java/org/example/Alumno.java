@@ -1,5 +1,7 @@
 package org.example;
 import jakarta.persistence.*;
+import org.example.logica.Carrera;
+
 import java.util.Date;
 @Entity
 public class Alumno {
@@ -13,14 +15,18 @@ public class Alumno {
     @Temporal(TemporalType.DATE)
     private Date fecha;
 
+    @OneToOne
+    private Carrera carre;
+
     public Alumno() {
     }
 
-    public Alumno(int ID, String nombre, String apellido, Date fecha) {
+    public Alumno(int ID, String nombre, String apellido, Date fecha, Carrera carre) {
         this.ID = ID;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha = fecha;
+        this.carre = carre;
     }
 
     public Date getFecha() {
@@ -53,6 +59,14 @@ public class Alumno {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public Carrera getCarre() {
+        return carre;
+    }
+
+    public void setCarre(Carrera carre) {
+        this.carre = carre;
     }
 
     @Override

@@ -6,6 +6,7 @@
 
     <persistence-unit name="MiUnidadPersistencia">
         <class>org.example.Alumno</class>
+        <class>org.example.logica.Carrera</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pruebatodocode" />
             <property name="jakarta.persistence.jdbc.user" value="root" />
