@@ -3,6 +3,8 @@ import org.example.Alumno;
 import org.example.jpa.pruebapersistencia.ControladoraPersistencia;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class ControladoraLogica {
     ControladoraPersistencia controlPersis=new ControladoraPersistencia();
 
@@ -39,4 +41,24 @@ public class ControladoraLogica {
     public void editarCarrera(Carrera car){
         controlPersis.editarCarrera(car);
     }
+
+    //Materia
+
+    public void crearMatereria(Materia mar){
+        controlPersis.crearMateria(mar);
+    }
+    public void eliminarMateria(int id){
+        controlPersis.elimnarMateria(id);
+
+    }
+    public Materia traerMateria(int id){
+        return controlPersis.traerMateria(id);
+    }
+    public LinkedList<Materia> traerlistadeMaterias(){
+        return controlPersis.traerlistadeMaterias();
+    }
+    public void editarMateria(Materia mat){
+        controlPersis.editarMateria(mat);
+    }
+
 }

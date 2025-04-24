@@ -1,13 +1,16 @@
 package org.example.jpa.pruebapersistencia;
 import org.example.Alumno;
 import org.example.logica.Carrera;
+import org.example.logica.Materia;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ControladoraPersistencia {
     AlumnoController alujpa=new AlumnoController();
     CarreraController carrejpa=new CarreraController();
+    MateriaController matjpa=new MateriaController();
 
     public void crearAlumno(Alumno alu) {
         alujpa.create(alu);
@@ -53,5 +56,30 @@ public class ControladoraPersistencia {
         List<Carrera> listi=carrejpa.listarTodos();
         ArrayList<Carrera> listaCarreras=new ArrayList<Carrera>(listi);
         return listaCarreras;
+    }
+
+    //Materia
+
+    public void crearMateria(Materia mar) {
+        matjpa.create(mar);
+    }
+
+    public void elimnarMateria(int id) {
+        matjpa.destroy(id);
+    }
+
+    public Materia traerMateria(int id) {
+       return matjpa.find(id);
+    }
+
+    public LinkedList<Materia> traerlistadeMaterias() {
+        List<Materia> lista=matjpa.listarTodos();
+        LinkedList<Materia> listaMaterias=new LinkedList<Materia>(lista);
+        return listaMaterias;
+
+    }
+
+    public void editarMateria(Materia mat) {
+        matjpa.edit(mat);
     }
 }
